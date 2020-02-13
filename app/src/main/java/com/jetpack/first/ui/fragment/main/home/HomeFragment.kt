@@ -1,4 +1,4 @@
-package com.jetpack.first.ui.home
+package com.jetpack.first.ui.fragment.main.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

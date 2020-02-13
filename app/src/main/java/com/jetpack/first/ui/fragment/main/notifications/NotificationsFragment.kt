@@ -1,4 +1,4 @@
-package com.jetpack.first.ui.notifications
+package com.jetpack.first.ui.fragment.main.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater

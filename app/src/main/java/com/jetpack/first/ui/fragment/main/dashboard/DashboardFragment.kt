@@ -1,4 +1,4 @@
-package com.jetpack.first.ui.dashboard
+package com.jetpack.first.ui.fragment.main.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
