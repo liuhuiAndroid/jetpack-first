@@ -10,6 +10,18 @@ import com.jetpack.first.db.data.Shoe
 @Dao
 interface ShoeDao {
 
+    // 选择所有的鞋
+    @Query("SELECT * FROM shoe")
+    fun getAllShoes(): LiveData<List<Shoe>>
+
+    /**
+     * 通过品牌查询鞋子
+     */
+    @Query("SELECT * FROM shoe WHERE shoe_brand=:brand")
+    fun findShoeByBrand(brand: String): LiveData<List<Shoe>>
+
+    // ===================================================
+
     // 增加一双鞋子
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertShoe(shoe: Shoe)
@@ -36,6 +48,10 @@ interface ShoeDao {
     // 参数也可以是集合
     @Update
     fun updateShoes(shoes:Array<Shoe>)
+
+    // 查询多个
+    @Query("SELECT * FROM shoe")
+    fun findAllShoe(): List<Shoe>
 
     // 查询一个
     @Query("SELECT * FROM shoe WHERE id=:id")
@@ -65,4 +81,5 @@ interface ShoeDao {
                 "WHERE fav_shoe.user_id = :userId"
     )
     fun findShoesByUserId(userId: Long): LiveData<List<Shoe>>
+
 }

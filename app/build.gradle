@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'androidx.navigation.safeargs'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -49,7 +51,7 @@ dependencies {
 
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout_version"
 
-    implementation "org.jetbrains.anko:anko:$anko_version"
+    implementation "org.jetbrains.anko:anko:$rootProject.anko_version"
 
     implementation "androidx.navigation:navigation-fragment:$rootProject.navigation_version"
     implementation "androidx.navigation:navigation-ui:$rootProject.navigation_version"
@@ -61,9 +63,16 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_version"
     // room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-    annotationProcessor "androidx.room:room-compiler:$room_version"
-    testImplementation "androidx.room:room-testing:$room_version"
-
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    implementation "androidx.room:room-ktx:$rootProject.room_version"
+    annotationProcessor "androidx.room:room-compiler:$rootProject.room_version"
+    testImplementation "androidx.room:room-testing:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version"
+    // glide
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide_version"
+    // WorkManger
+    implementation "androidx.work:work-runtime-ktx:$rootProject.work_version"
+    // gson
+    implementation "com.google.code.gson:gson:$rootProject.gson_version"
 }

@@ -5,12 +5,15 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import com.jetpack.first.db.dao.FavouriteShoeDao
 import com.jetpack.first.db.dao.ShoeDao
 import com.jetpack.first.db.dao.UserDao
 import com.jetpack.first.db.data.FavouriteShoe
 import com.jetpack.first.db.data.Shoe
 import com.jetpack.first.db.data.User
+import com.jetpack.first.utils.ShoeWorker
 
 /**
  * 数据库文件
@@ -50,6 +53,10 @@ abstract class AppDataBase : RoomDatabase() {
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
+
+                        // 读取鞋的集合
+                        val request = OneTimeWorkRequestBuilder<ShoeWorker>().build()
+                        WorkManager.getInstance(context).enqueue(request)
                     }
                 })
                 .build()
