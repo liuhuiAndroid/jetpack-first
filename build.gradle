@@ -8,8 +8,10 @@ buildscript {
     ext.lifecycle_version = "2.2.0"
     ext.room_version = "2.2.2"
     ext.glide_version = "4.11.0"
-    ext.work_version = "2.2.0"
+    ext.work_version = "2.3.1"
     ext.gson_version = "2.8.6"
+    ext.timber_version = "4.7.1"
+    ext.permissions_version = "3.0.0"
 
     repositories {
         google()

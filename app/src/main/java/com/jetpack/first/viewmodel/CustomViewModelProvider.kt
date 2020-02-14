@@ -1,8 +1,10 @@
 package com.jetpack.first.viewmodel
 
 import android.content.Context
+import com.jetpack.first.AppContext
 import com.jetpack.first.db.RepositoryProvider
 import com.jetpack.first.db.repository.ShoeRepository
+import com.jetpack.first.viewmodel.factory.MeModelFactory
 import com.jetpack.first.viewmodel.factory.ShoeModelFactory
 
 /**
@@ -14,4 +16,9 @@ object CustomViewModelProvider {
         val repository: ShoeRepository = RepositoryProvider.providerShoeRepository(context)
         return ShoeModelFactory(repository)
     }
+
+
+//    fun providerMeModel(context: Context): MeModelFactory {
+//        return MeModelFactory(AppContext)
+//    }
 }

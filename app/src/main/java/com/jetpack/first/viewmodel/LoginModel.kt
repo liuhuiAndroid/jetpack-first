@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.databinding.ObservableField
-import com.jetpack.first.MainActivity
+import com.jetpack.first.ui.activity.MainActivity
 import com.jetpack.first.common.BaseConstant
 
 class LoginModel constructor(name: String, pwd: String, context: Context) {

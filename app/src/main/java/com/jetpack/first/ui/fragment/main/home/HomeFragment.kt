@@ -55,11 +55,11 @@ class HomeFragment : Fragment() {
             }
         })
 
-        Thread{
-            val shoeDao = RepositoryProvider.providerShoeRepository(AppContext)
-            val allShoes = shoeDao.findAllShoe()
-            Log.e("AAA", allShoes.toString())
-        }.start()
+//        Thread{
+//            val shoeDao = RepositoryProvider.providerShoeRepository(AppContext)
+//            val allShoes = shoeDao.findAllShoe()
+//            Log.e("AAA", allShoes.toString())
+//        }.start()
     }
 
 }

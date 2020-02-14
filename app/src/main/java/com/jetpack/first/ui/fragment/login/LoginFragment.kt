@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import com.jetpack.first.MainActivity
+import com.jetpack.first.ui.activity.MainActivity
 import com.jetpack.first.R
 import com.jetpack.first.databinding.FragmentLoginBinding
 import com.jetpack.first.viewmodel.LoginModel

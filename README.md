@@ -1,6 +1,6 @@
-# jetpack-first
+# Jetpack-first
 
-[《即学即用Android Jetpack - Data Binding》](https://www.jianshu.com/p/e3b881d80c6d)
+[视频 Android Jetpack 导航组件](<https://www.bilibili.com/video/av54529064>)
 
 #### Navigation
 
@@ -26,8 +26,16 @@
 
 #### DataBinding
 
+[《即学即用Android Jetpack - Data Binding》](https://www.jianshu.com/p/e3b881d80c6d)
+
 #### Lifecycles
 
 #### WorkManager
+
+[Android Jetpack WorkManager](<https://www.bilibili.com/video/av56276889>)
+
+[跟上脚步，进入后台执行新时代](https://mp.weixin.qq.com/s/lvUJEL7PAZFAzNjrscGEuw)
+
+[[译\] 从Service到WorkManager](https://links.jianshu.com/go?to=https%3A%2F%2Fjuejin.im%2Fpost%2F5b04d064f265da0b80711759%23heading-3)
 
 [《即学即用Android Jetpack - WorkManger》](https://www.jianshu.com/p/68e720b8a939)
