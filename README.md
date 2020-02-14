@@ -4,13 +4,9 @@
 
 [《即学即用Android Jetpack - ViewModel & LiveData》](https://www.jianshu.com/p/81a284969f03)
 
-[《即学即用Android Jetpack - Room》](https://www.jianshu.com/p/815c7db24b6d)
-
 [《即学即用Android Jetpack - Paging》](https://www.jianshu.com/p/0b7c82a5c27f)
 
 [《即学即用Android Jetpack - WorkManger》](https://www.jianshu.com/p/68e720b8a939)
-
-
 
 #### Navigation
 
@@ -27,6 +23,8 @@
 #### CameraX
 
 #### Room
+
+[《即学即用Android Jetpack - Room》](https://www.jianshu.com/p/815c7db24b6d)
 
 #### DataBinding
 
