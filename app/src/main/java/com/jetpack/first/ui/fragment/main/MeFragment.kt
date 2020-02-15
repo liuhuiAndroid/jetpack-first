@@ -15,8 +15,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.work.WorkInfo
 import com.jetpack.first.R
 import com.jetpack.first.common.BaseConstant.KEY_IMAGE_URI
+import com.jetpack.first.databinding.FragmentMeBinding
+import com.jetpack.first.viewmodel.LoginModel
 import com.jetpack.first.viewmodel.MeModel
-import kotlinx.android.synthetic.main.fragment_notifications.*
+import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.support.v4.toast
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
@@ -40,8 +42,10 @@ class MeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
             ViewModelProviders.of(this).get(MeModel::class.java)
 
         meViewModel.outputWorkInfoItems.observe(this, workInfosObserver())
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
-        return root
+
+        val binding = FragmentMeBinding.inflate(inflater, container, false)
+        binding.model = meViewModel
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

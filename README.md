@@ -1,6 +1,8 @@
-# [Jetpack官方文档](<https://developer.android.com/jetpack>)
+### [Jetpack官方文档 中文版](<https://developer.android.com/jetpack>)
 
-#### Navigation
+### [Jetpack官方文档 英文版](<https://developer.android.com/jetpack?hl=en>)
+
+#### Navigation - 管理应用导航流程
 
 [视频 Android Jetpack 导航组件](<https://www.bilibili.com/video/av54529064>)
 
@@ -8,17 +10,9 @@
 
 [《即学即用Android Jetpack - Navigation》](https://www.jianshu.com/p/66b93df4b7a6)
 
-#### Paging
+#### DataBinding
 
-[视频 Android Jetpack: 分页库 (Paging Library)](<https://www.bilibili.com/video/av35089294>)
-
-[《即学即用Android Jetpack - Paging》](https://www.jianshu.com/p/0b7c82a5c27f)
-
-#### LiveData
-
-#### Lifecycles
-
-[视频 Android Jetpack: LiveData 和 Lifecycle](<https://www.bilibili.com/video/av33633628>)
+[《即学即用Android Jetpack - Data Binding》](https://www.jianshu.com/p/e3b881d80c6d)
 
 #### ViewModel
 
@@ -26,17 +20,25 @@
 
 [《即学即用Android Jetpack - ViewModel & LiveData》](https://www.jianshu.com/p/81a284969f03)
 
-#### Room
+#### LiveData
+
+#### Lifecycles
+
+[视频 Android Jetpack: LiveData 和 Lifecycle](<https://www.bilibili.com/video/av33633628>)
+
+#### Room - 实现数据存储持久性
 
 [视频 Android Jetpack Room](<https://www.bilibili.com/video/av30617550>)
 
 [《即学即用Android Jetpack - Room》](https://www.jianshu.com/p/815c7db24b6d)
 
-#### DataBinding
+#### Paging
 
-[《即学即用Android Jetpack - Data Binding》](https://www.jianshu.com/p/e3b881d80c6d)
+[视频 Android Jetpack: 分页库 (Paging Library)](<https://www.bilibili.com/video/av35089294>)
 
-#### WorkManager
+[《即学即用Android Jetpack - Paging》](https://www.jianshu.com/p/0b7c82a5c27f)
+
+#### WorkManager - 满足您的后台调度需求
 
 [Android Jetpack WorkManager](<https://www.bilibili.com/video/av56276889>)
 
@@ -46,10 +48,12 @@
 
 [《即学即用Android Jetpack - WorkManger》](https://www.jianshu.com/p/68e720b8a939)
 
-#### CameraX
+#### CameraX - 满足相机应用需求
 
-#### TODO Kotlin
+#### Kotlin
+
+[Kotlin系列之let、with、run、apply、also函数的使用](<https://blog.csdn.net/u013064109/article/details/78786646>)
 
 [Android 进阶：基于 Kotlin 的 Android App 开发实践](https://juejin.im/book/5af1c5ee6fb9a07a9f018368/section)
 
-系统的学来不及效率也不一定高，遇到一个学一个吧
+多学英语看官方文档。

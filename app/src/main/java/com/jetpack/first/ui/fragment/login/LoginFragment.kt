@@ -12,6 +12,7 @@ import com.jetpack.first.databinding.FragmentLoginBinding
 import com.jetpack.first.viewmodel.LoginModel
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.jetbrains.anko.support.v4.startActivity
+import org.jetbrains.anko.support.v4.toast
 
 class LoginFragment : Fragment() {
 
@@ -22,12 +23,13 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
-            inflater,
-            R.layout.fragment_login,
-            container,
-            false
-        )
+//        val binding = DataBindingUtil.inflate<FragmentLoginBinding>(
+//            inflater,
+//            R.layout.fragment_login,
+//            container,
+//            false
+//        )
+        val binding = FragmentLoginBinding.inflate(inflater, container, false)
         loginModel = LoginModel("", "", context!!)
         binding.model = loginModel
         binding.activity = activity
@@ -40,6 +42,7 @@ class LoginFragment : Fragment() {
         btn_login.setOnClickListener {
             startActivity<MainActivity>()
         }
+
     }
 
 }

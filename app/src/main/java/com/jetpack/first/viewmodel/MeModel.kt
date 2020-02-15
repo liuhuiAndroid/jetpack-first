@@ -2,6 +2,7 @@ package com.jetpack.first.viewmodel
 
 import android.app.Application
 import android.net.Uri
+import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.work.*
@@ -14,8 +15,11 @@ import com.jetpack.first.worker.SaveImageToFileWorker
 
 class MeModel(application: Application) : AndroidViewModel(application) {
 
-    internal var imageUri: Uri? = null
-    internal var outputUri: Uri? = null
+//    var imageUri1 = ObservableField<Int>()
+//    var imageUri2 = ObservableField<Int>()
+
+    private var imageUri: Uri? = null
+    private var outputUri: Uri? = null
     internal val outputWorkInfoItems: LiveData<List<WorkInfo>>
     private val workManager: WorkManager = WorkManager.getInstance(application)
 
