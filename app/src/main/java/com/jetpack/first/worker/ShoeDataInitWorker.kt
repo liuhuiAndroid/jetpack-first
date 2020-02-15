@@ -1,7 +1,6 @@
-package com.jetpack.first.utils
+package com.jetpack.first.worker
 
 import android.content.Context
-import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.google.gson.Gson
@@ -9,20 +8,22 @@ import com.google.gson.reflect.TypeToken
 import com.google.gson.stream.JsonReader
 import com.jetpack.first.db.RepositoryProvider
 import com.jetpack.first.db.data.Shoe
-import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import timber.log.Timber
 import java.lang.Exception
 
-class ShoeWorker (
-    context: Context,
-    workerParams: WorkerParameters
-) : CoroutineWorker(context, workerParams) {
+/**
+ * 创建后台任务
+ */
+class ShoeDataInitWorker(appContext: Context, workerParams: WorkerParameters) :
+    CoroutineWorker(appContext, workerParams) {
 
-    private val TAG by lazy {
-        ShoeWorker::class.java.simpleName
-    }
-
-    override suspend fun doWork(): Result = coroutineScope {
+    override suspend fun doWork(): Result = withContext(Dispatchers.Default) {
         try {
+            // Dispatchers.IO : thread name=DefaultDispatcher-worker-1
+            Timber.i( "thread name="+Thread.currentThread().name)
+
             applicationContext.assets.open("shoes.json").use {
                 JsonReader(it.reader()).use {
                     val shoeType = object : TypeToken<List<Shoe>>() {}.type
@@ -30,12 +31,13 @@ class ShoeWorker (
 
                     val shoeDao = RepositoryProvider.providerShoeRepository(applicationContext)
                     shoeDao.insertShoes(shoeList)
+                    // 通知 WorkManager 任务已成功完成
                     Result.success()
                 }
-
             }
         } catch (ex: Exception) {
-            Log.e(TAG, "Error seeding database", ex)
+            Timber.e( "Error seeding database", ex)
+            // 通知 WorkManager 任务已失败
             Result.failure()
         }
     }

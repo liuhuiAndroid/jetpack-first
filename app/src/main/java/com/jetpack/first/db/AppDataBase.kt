@@ -13,7 +13,7 @@ import com.jetpack.first.db.dao.UserDao
 import com.jetpack.first.db.data.FavouriteShoe
 import com.jetpack.first.db.data.Shoe
 import com.jetpack.first.db.data.User
-import com.jetpack.first.utils.ShoeWorker
+import com.jetpack.first.worker.ShoeDataInitWorker
 
 /**
  * 数据库文件
@@ -54,8 +54,9 @@ abstract class AppDataBase : RoomDatabase() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)
 
-                        // 读取鞋的集合
-                        val request = OneTimeWorkRequestBuilder<ShoeWorker>().build()
+                        // 一次性 WorkRequest，请使用 OneTimeWorkRequest
+                        val request = OneTimeWorkRequestBuilder<ShoeDataInitWorker>().build()
+                        // 将任务提交给系统
                         WorkManager.getInstance(context).enqueue(request)
                     }
                 })

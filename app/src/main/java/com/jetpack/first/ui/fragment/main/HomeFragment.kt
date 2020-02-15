@@ -1,4 +1,4 @@
-package com.jetpack.first.ui.fragment.main.home
+package com.jetpack.first.ui.fragment.main
 
 import android.os.Bundle
 import android.util.Log

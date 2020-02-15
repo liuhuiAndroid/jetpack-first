@@ -1,4 +1,4 @@
-package com.jetpack.first.ui.fragment.main.me
+package com.jetpack.first.ui.fragment.main
 
 import android.Manifest
 import android.app.Activity

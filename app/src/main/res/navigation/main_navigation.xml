@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.jetpack.first.ui.fragment.main.home.HomeFragment"
+        android:name="com.jetpack.first.ui.fragment.main.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
@@ -19,7 +19,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.jetpack.first.ui.fragment.main.me.MeFragment"
+        android:name="com.jetpack.first.ui.fragment.main.MeFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 </navigation>

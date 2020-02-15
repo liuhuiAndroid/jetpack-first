@@ -2,6 +2,9 @@ package com.jetpack.first
 
 import android.app.Application
 import android.content.ContextWrapper
+import timber.log.Timber
+import timber.log.Timber.DebugTree
+
 
 private lateinit var INSTANCE: Application
 
@@ -10,6 +13,10 @@ open class JApplication : Application(){
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
+
+        if (BuildConfig.DEBUG) {
+            Timber.plant(DebugTree())
+        }
     }
 
 }
