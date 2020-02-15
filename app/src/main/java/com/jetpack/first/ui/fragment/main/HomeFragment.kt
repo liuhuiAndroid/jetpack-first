@@ -20,6 +20,7 @@ import com.jetpack.first.viewmodel.CustomViewModelProvider
 import com.jetpack.first.viewmodel.ShoeModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import timber.log.Timber
 
 class HomeFragment : Fragment() {
 
@@ -39,7 +40,7 @@ class HomeFragment : Fragment() {
             false
         )
         context ?: return binding.root
-        val adapter = ShoeAdapter()
+        val adapter = ShoeAdapter(context!!)
         binding.recyclerView.adapter = adapter
         onSubscribeUi(adapter)
         return binding.root
@@ -55,11 +56,11 @@ class HomeFragment : Fragment() {
             }
         })
 
-//        Thread{
-//            val shoeDao = RepositoryProvider.providerShoeRepository(AppContext)
-//            val allShoes = shoeDao.findAllShoe()
-//            Log.e("AAA", allShoes.toString())
-//        }.start()
+        Thread{
+            val shoeDao = RepositoryProvider.providerShoeRepository(AppContext)
+            val allShoes = shoeDao.findAllShoe()
+            Log.e("AAA",  "allShoes.size = " + allShoes.size)
+        }.start()
     }
 
 }

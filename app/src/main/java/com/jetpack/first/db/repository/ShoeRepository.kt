@@ -5,6 +5,11 @@ import com.jetpack.first.db.data.Shoe
 
 class ShoeRepository private constructor(private val shoeDao: ShoeDao) {
 
+    /**
+     * 通过id的范围寻找鞋子
+     */
+    fun getPageShoes(startIndex:Long,endIndex:Long):List<Shoe> = shoeDao.findShoesByIndexRange(startIndex,endIndex)
+
     fun getAllShoes() = shoeDao.getAllShoes()
 
     fun findAllShoe() = shoeDao.findAllShoe()

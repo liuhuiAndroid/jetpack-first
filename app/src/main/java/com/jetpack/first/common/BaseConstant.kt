@@ -5,6 +5,8 @@ object BaseConstant {
     const val USER_NAME:String = "admin"
     const val USER_PWD:String = "123456"
 
+    // 单个页面大小
+    const val SINGLE_PAGE_SIZE = 6
 
     // Worker
     @JvmField val VERBOSE_NOTIFICATION_CHANNEL_NAME: CharSequence =

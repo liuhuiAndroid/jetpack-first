@@ -1,6 +1,7 @@
 package com.jetpack.first.db.dao
 
 import androidx.lifecycle.LiveData
+import androidx.paging.DataSource
 import androidx.room.*
 import com.jetpack.first.db.data.Shoe
 
@@ -9,6 +10,10 @@ import com.jetpack.first.db.data.Shoe
  */
 @Dao
 interface ShoeDao {
+
+    // 通过鞋子的范围寻找Index
+    @Query("SELECT * FROM shoe WHERE id between :startIndex AND :endIndex ORDER BY id ASC")
+    fun findShoesByIndexRange(startIndex: Long, endIndex: Long):List<Shoe>
 
     // 选择所有的鞋
     @Query("SELECT * FROM shoe")
@@ -67,7 +72,7 @@ interface ShoeDao {
 
     // 配合LiveData 返回所有的鞋子
     @Query("SELECT * FROM shoe")
-    fun getAllShoesLD(): LiveData<List<Shoe>>
+    fun getAllShoesLD(): DataSource.Factory<Int, Shoe>
 
     // 配合LiveData 通过Id查询单款鞋子
     @Query("SELECT * FROM shoe WHERE id=:id")

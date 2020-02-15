@@ -79,4 +79,6 @@ dependencies {
     implementation "com.jakewharton.timber:timber:$rootProject.timber_version"
     // permissions
     implementation "pub.devrel:easypermissions:$rootProject.permissions_version"
+    // paging
+    implementation "androidx.paging:paging-runtime:$rootProject.paging_version"
 }

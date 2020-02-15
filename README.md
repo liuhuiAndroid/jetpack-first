@@ -26,8 +26,6 @@
 
 [《即学即用Android Jetpack - ViewModel & LiveData》](https://www.jianshu.com/p/81a284969f03)
 
-#### CameraX
-
 #### Room
 
 [视频 Android Jetpack Room](<https://www.bilibili.com/video/av30617550>)
@@ -48,5 +46,10 @@
 
 [《即学即用Android Jetpack - WorkManger》](https://www.jianshu.com/p/68e720b8a939)
 
+#### CameraX
+
 #### TODO Kotlin
 
+[Android 进阶：基于 Kotlin 的 Android App 开发实践](https://juejin.im/book/5af1c5ee6fb9a07a9f018368/section)
+
+系统的学来不及效率也不一定高，遇到一个学一个吧

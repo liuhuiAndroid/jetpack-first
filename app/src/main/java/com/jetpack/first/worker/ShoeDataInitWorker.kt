@@ -19,7 +19,7 @@ import java.lang.Exception
 class ShoeDataInitWorker(appContext: Context, workerParams: WorkerParameters) :
     CoroutineWorker(appContext, workerParams) {
 
-    override suspend fun doWork(): Result = withContext(Dispatchers.Default) {
+    override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
         try {
             // Dispatchers.IO : thread name=DefaultDispatcher-worker-1
             Timber.i( "thread name="+Thread.currentThread().name)
@@ -32,11 +32,12 @@ class ShoeDataInitWorker(appContext: Context, workerParams: WorkerParameters) :
                     val shoeDao = RepositoryProvider.providerShoeRepository(applicationContext)
                     shoeDao.insertShoes(shoeList)
                     // 通知 WorkManager 任务已成功完成
+                    Timber.i( "ShoeDataInitWorker success")
                     Result.success()
                 }
             }
         } catch (ex: Exception) {
-            Timber.e( "Error seeding database", ex)
+            Timber.i( "ShoeDataInitWorker failure")
             // 通知 WorkManager 任务已失败
             Result.failure()
         }
