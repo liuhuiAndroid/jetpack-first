@@ -1,9 +1,8 @@
-package com.jetpack.first.viewmodel
+package com.jetpack.first.viewmodels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.switchMap
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
 import com.jetpack.first.db.data.Shoe

@@ -1,17 +1,16 @@
-package com.jetpack.first.viewmodel
+package com.jetpack.first.viewmodels
 
 import android.app.Application
 import android.net.Uri
-import androidx.databinding.ObservableField
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.work.*
-import com.jetpack.first.common.BaseConstant.IMAGE_MANIPULATION_WORK_NAME
-import com.jetpack.first.common.BaseConstant.KEY_IMAGE_URI
-import com.jetpack.first.common.BaseConstant.TAG_OUTPUT
-import com.jetpack.first.worker.BlurWorker
-import com.jetpack.first.worker.CleanupWorker
-import com.jetpack.first.worker.SaveImageToFileWorker
+import com.jetpack.first.common.Constants.IMAGE_MANIPULATION_WORK_NAME
+import com.jetpack.first.common.Constants.KEY_IMAGE_URI
+import com.jetpack.first.common.Constants.TAG_OUTPUT
+import com.jetpack.first.workers.BlurWorker
+import com.jetpack.first.workers.CleanupWorker
+import com.jetpack.first.workers.SaveImageToFileWorker
 
 class MeModel(application: Application) : AndroidViewModel(application) {
 

@@ -1,6 +1,14 @@
-### [Jetpack官方文档 中文版](<https://developer.android.com/jetpack>)
+## Jetpack 系列
 
-### [Jetpack官方文档 英文版](<https://developer.android.com/jetpack?hl=en>)
+目的：跟随官方的脚步深入学习Kotlin和Jetack，方便今后的工作和私人项目中大量使用
+
+方法：参考官方文档和Demo逐个击破单个架构组件，深入学习官方示例，然后参考Jetpack全组件实战系列视频实现一个自己的开源项目
+
+[Jetpack官方文档 中文版](<https://developer.android.com/jetpack>)
+
+[Jetpack官方文档 英文版](<https://developer.android.com/jetpack?hl=en>)
+
+[Sunflower](https://github.com/googlesamples/android-sunflower)，这是一款园艺应用，展示了使用 Android Jetpack 进行 Android 开发的最佳做法
 
 #### Navigation - 管理应用导航流程
 

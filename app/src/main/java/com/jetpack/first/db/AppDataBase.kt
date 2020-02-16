@@ -7,13 +7,14 @@ import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import com.jetpack.first.common.Constants
 import com.jetpack.first.db.dao.FavouriteShoeDao
 import com.jetpack.first.db.dao.ShoeDao
 import com.jetpack.first.db.dao.UserDao
 import com.jetpack.first.db.data.FavouriteShoe
 import com.jetpack.first.db.data.Shoe
 import com.jetpack.first.db.data.User
-import com.jetpack.first.worker.ShoeDataInitWorker
+import com.jetpack.first.workers.ShoeDataInitWorker
 
 /**
  * 数据库文件
@@ -49,7 +50,7 @@ abstract class AppDataBase : RoomDatabase() {
 
         private fun buildDataBase(context: Context): AppDataBase {
             return Room
-                .databaseBuilder(context, AppDataBase::class.java, "jetPackDemo-database")
+                .databaseBuilder(context, AppDataBase::class.java, Constants.DATABASE_NAME)
                 .addCallback(object : RoomDatabase.Callback() {
                     override fun onCreate(db: SupportSQLiteDatabase) {
                         super.onCreate(db)

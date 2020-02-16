@@ -1,9 +1,11 @@
 package com.jetpack.first.common
 
-object BaseConstant {
+object Constants {
 
     const val USER_NAME:String = "admin"
     const val USER_PWD:String = "123456"
+
+    const val DATABASE_NAME = "first-database"
 
     // 单个页面大小
     const val SINGLE_PAGE_SIZE = 6

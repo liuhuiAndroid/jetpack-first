@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.jetpack.first.worker
+package com.jetpack.first.workers
 
 import android.content.Context
 import java.io.File
 
 import androidx.work.Worker
 import androidx.work.WorkerParameters
-import com.jetpack.first.common.BaseConstant.OUTPUT_PATH
+import com.jetpack.first.common.Constants.OUTPUT_PATH
 import timber.log.Timber
 
 /**

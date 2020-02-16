@@ -1,4 +1,4 @@
-package com.jetpack.first.binding
+package com.jetpack.first.adapters
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
@@ -10,6 +10,7 @@ fun bindImageFromUrl(view: ImageView, imageUrl:String?){
     if(!imageUrl.isNullOrEmpty()){
         Glide.with(view.context)
             .load(imageUrl)
+            // 动画渐变加载
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(view)
     }

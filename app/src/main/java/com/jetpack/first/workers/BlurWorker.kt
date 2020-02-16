@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.jetpack.first.worker
+package com.jetpack.first.workers
 
 import android.content.Context
 import android.graphics.BitmapFactory
@@ -24,9 +24,9 @@ import androidx.work.Data
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
-import com.jetpack.first.common.BaseConstant.KEY_IMAGE_URI
-import com.jetpack.first.utils.blurBitmap
-import com.jetpack.first.utils.writeBitmapToFile
+import com.jetpack.first.common.Constants.KEY_IMAGE_URI
+import com.jetpack.first.utilities.blurBitmap
+import com.jetpack.first.utilities.writeBitmapToFile
 import timber.log.Timber
 
 /**

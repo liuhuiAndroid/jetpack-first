@@ -10,17 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.jetpack.first.AppContext
-import com.jetpack.first.JApplication
 import com.jetpack.first.R
 import com.jetpack.first.databinding.FragmentHomeBinding
 import com.jetpack.first.db.RepositoryProvider
-import com.jetpack.first.db.data.User
 import com.jetpack.first.ui.adapter.ShoeAdapter
-import com.jetpack.first.viewmodel.CustomViewModelProvider
-import com.jetpack.first.viewmodel.ShoeModel
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import timber.log.Timber
+import com.jetpack.first.viewmodels.CustomViewModelProvider
+import com.jetpack.first.viewmodels.ShoeModel
 
 class HomeFragment : Fragment() {
 

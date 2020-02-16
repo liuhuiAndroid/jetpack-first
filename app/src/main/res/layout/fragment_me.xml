@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.jetpack.first.viewmodel.MeModel"/>
+            type="com.jetpack.first.viewmodels.MeModel"/>
 
     </data>
 

@@ -1,4 +1,4 @@
-package com.jetpack.first.worker
+package com.jetpack.first.workers
 
 import android.content.Context
 import androidx.work.CoroutineWorker

@@ -1,11 +1,9 @@
-package com.jetpack.first.viewmodel
+package com.jetpack.first.viewmodels
 
 import android.content.Context
-import com.jetpack.first.AppContext
 import com.jetpack.first.db.RepositoryProvider
 import com.jetpack.first.db.repository.ShoeRepository
-import com.jetpack.first.viewmodel.factory.MeModelFactory
-import com.jetpack.first.viewmodel.factory.ShoeModelFactory
+import com.jetpack.first.viewmodels.factory.ShoeModelFactory
 
 /**
  * ViewModel提供者

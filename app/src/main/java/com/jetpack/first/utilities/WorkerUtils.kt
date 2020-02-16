@@ -16,7 +16,7 @@
 
 @file:JvmName("WorkerUtils")
 
-package com.jetpack.first.utils
+package com.jetpack.first.utilities
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -26,7 +26,7 @@ import android.renderscript.Element
 import android.renderscript.RenderScript
 import android.renderscript.ScriptIntrinsicBlur
 import androidx.annotation.WorkerThread
-import com.jetpack.first.common.BaseConstant.OUTPUT_PATH
+import com.jetpack.first.common.Constants.OUTPUT_PATH
 
 import java.io.File
 import java.io.FileNotFoundException

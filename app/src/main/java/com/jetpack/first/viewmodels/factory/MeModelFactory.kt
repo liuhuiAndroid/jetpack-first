@@ -1,9 +1,9 @@
-package com.jetpack.first.viewmodel.factory
+package com.jetpack.first.viewmodels.factory
 
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.jetpack.first.viewmodel.MeModel
+import com.jetpack.first.viewmodels.MeModel
 
 class MeModelFactory(private val application: Application) : ViewModelProvider.NewInstanceFactory() {
 

@@ -1,7 +1,7 @@
 package com.jetpack.first.db.datasource
 
 import androidx.paging.PageKeyedDataSource
-import com.jetpack.first.common.BaseConstant
+import com.jetpack.first.common.Constants
 import com.jetpack.first.db.data.Shoe
 import com.jetpack.first.db.repository.ShoeRepository
 import timber.log.Timber
@@ -22,7 +22,7 @@ class CustomPageDataSource(private val shoeRepository: ShoeRepository) : PageKey
         Timber.i("startPage:${params.key},size:${params.requestedLoadSize}")
 
         val startPage = params.key
-        val startIndex = ((startPage - 1) * BaseConstant.SINGLE_PAGE_SIZE).toLong() + 1
+        val startIndex = ((startPage - 1) * Constants.SINGLE_PAGE_SIZE).toLong() + 1
         val endIndex = startIndex + params.requestedLoadSize - 1
         val shoes = shoeRepository.getPageShoes(startIndex, endIndex)
 
@@ -33,7 +33,7 @@ class CustomPageDataSource(private val shoeRepository: ShoeRepository) : PageKey
         Timber.i("endPage:${params.key},size:${params.requestedLoadSize}")
 
         val endPage = params.key
-        val endIndex = ((endPage - 1) * BaseConstant.SINGLE_PAGE_SIZE).toLong() + 1
+        val endIndex = ((endPage - 1) * Constants.SINGLE_PAGE_SIZE).toLong() + 1
         var startIndex = endIndex - params.requestedLoadSize
         startIndex = if (startIndex < 0) 0L else startIndex
         val shoes = shoeRepository.getPageShoes(startIndex, endIndex)

@@ -1,11 +1,11 @@
-package com.jetpack.first.viewmodel
+package com.jetpack.first.viewmodels
 
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 import androidx.databinding.ObservableField
 import com.jetpack.first.ui.activity.MainActivity
-import com.jetpack.first.common.BaseConstant
+import com.jetpack.first.common.Constants
 
 class LoginModel constructor(name: String, pwd: String, context: Context) {
 
@@ -29,7 +29,7 @@ class LoginModel constructor(name: String, pwd: String, context: Context) {
     }
 
     fun login() {
-        if (nameField.get().equals(BaseConstant.USER_NAME) && pwdField.get().equals(BaseConstant.USER_PWD)) {
+        if (nameField.get().equals(Constants.USER_NAME) && pwdField.get().equals(Constants.USER_PWD)) {
             Toast.makeText(context, "账号密码正确", Toast.LENGTH_SHORT).show()
             val intent = Intent(context, MainActivity::class.java)
             context.startActivity(intent)

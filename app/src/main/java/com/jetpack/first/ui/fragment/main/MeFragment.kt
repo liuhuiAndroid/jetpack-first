@@ -13,11 +13,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.work.WorkInfo
-import com.jetpack.first.R
-import com.jetpack.first.common.BaseConstant.KEY_IMAGE_URI
+import com.jetpack.first.common.Constants.KEY_IMAGE_URI
 import com.jetpack.first.databinding.FragmentMeBinding
-import com.jetpack.first.viewmodel.LoginModel
-import com.jetpack.first.viewmodel.MeModel
+import com.jetpack.first.viewmodels.MeModel
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.support.v4.toast
 import pub.devrel.easypermissions.AfterPermissionGranted
