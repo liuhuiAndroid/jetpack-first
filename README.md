@@ -10,9 +10,7 @@
 
 [《即学即用Android Jetpack - Navigation》](https://www.jianshu.com/p/66b93df4b7a6)
 
-#### DataBinding
-
-[《即学即用Android Jetpack - Data Binding》](https://www.jianshu.com/p/e3b881d80c6d)
+#### [DataBinding](./doc/1.DataBinding.md)
 
 #### ViewModel
 
