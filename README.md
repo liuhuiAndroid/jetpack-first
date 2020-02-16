@@ -4,6 +4,8 @@
 
 方法：参考官方文档和Demo逐个击破单个架构组件，深入学习官方示例，然后参考Jetpack全组件实战系列视频实现一个自己的开源项目
 
+Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应用，Google 推出了 Android Jetpack。它包含了开发库、工具、以及最佳实践指南。
+
 [Jetpack官方文档 中文版](<https://developer.android.com/jetpack>)
 
 [Jetpack官方文档 英文版](<https://developer.android.com/jetpack?hl=en>)
@@ -20,11 +22,7 @@
 
 #### [DataBinding](./doc/1.DataBinding.md)
 
-#### ViewModel
-
-[视频 Android Jetpack - ViewModel](<https://www.bilibili.com/video/av29949898>)
-
-[《即学即用Android Jetpack - ViewModel & LiveData》](https://www.jianshu.com/p/81a284969f03)
+#### [ViewModel](./doc/2.ViewModel.md)
 
 #### LiveData
 
@@ -61,5 +59,7 @@
 [Kotlin系列之let、with、run、apply、also函数的使用](<https://blog.csdn.net/u013064109/article/details/78786646>)
 
 [Android 进阶：基于 Kotlin 的 Android App 开发实践](https://juejin.im/book/5af1c5ee6fb9a07a9f018368/section)
+
+[将 Kotlin 协程与 Android 架构组件一起使用](https://developer.android.com/topic/libraries/architecture/coroutines)
 
 多学英语看官方文档。

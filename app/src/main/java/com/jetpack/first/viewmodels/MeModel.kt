@@ -14,9 +14,6 @@ import com.jetpack.first.workers.SaveImageToFileWorker
 
 class MeModel(application: Application) : AndroidViewModel(application) {
 
-//    var imageUri1 = ObservableField<Int>()
-//    var imageUri2 = ObservableField<Int>()
-
     private var imageUri: Uri? = null
     private var outputUri: Uri? = null
     internal val outputWorkInfoItems: LiveData<List<WorkInfo>>
