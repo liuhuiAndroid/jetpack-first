@@ -24,11 +24,7 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 
 #### [ViewModel](./doc/2.ViewModel.md)
 
-#### LiveData
-
-#### Lifecycles
-
-[视频 Android Jetpack: LiveData 和 Lifecycle](<https://www.bilibili.com/video/av33633628>)
+#### [LiveData 和 Lifecycle](./doc/3.LiveData 和 Lifecycle.md)
 
 #### Room - 实现数据存储持久性
 
