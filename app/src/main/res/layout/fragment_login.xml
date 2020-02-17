@@ -6,7 +6,7 @@
         <!--需要的viewModel,通过mBinding.vm=mViewMode注入-->
         <variable
             name="model"
-            type="com.jetpack.first.viewmodels.LoginModel"/>
+            type="com.jetpack.first.viewmodels.LoginXModel"/>
 
         <variable
             name="activity"

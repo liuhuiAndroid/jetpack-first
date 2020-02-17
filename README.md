@@ -12,6 +12,8 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 
 [Sunflower](https://github.com/googlesamples/android-sunflower)，这是一款园艺应用，展示了使用 Android Jetpack 进行 Android 开发的最佳做法
 
+[Android 架构组件基本示例](https://github.com/googlesamples/android-architecture-components/tree/master/BasicSample)
+
 #### Navigation - 管理应用导航流程
 
 [视频 Android Jetpack 导航组件](<https://www.bilibili.com/video/av54529064>)
@@ -59,3 +61,4 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 [将 Kotlin 协程与 Android 架构组件一起使用](https://developer.android.com/topic/libraries/architecture/coroutines)
 
 多学英语看官方文档。
+

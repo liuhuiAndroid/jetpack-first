@@ -8,12 +8,13 @@ import androidx.fragment.app.Fragment
 import com.jetpack.first.ui.activity.MainActivity
 import com.jetpack.first.databinding.FragmentLoginBinding
 import com.jetpack.first.viewmodels.LoginModel
+import com.jetpack.first.viewmodels.LoginXModel
 import kotlinx.android.synthetic.main.fragment_login.*
 import org.jetbrains.anko.support.v4.startActivity
 
 class LoginFragment : Fragment() {
 
-    private lateinit var loginModel: LoginModel
+    private lateinit var loginModel: LoginXModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,9 +28,10 @@ class LoginFragment : Fragment() {
 //            false
 //        )
         val binding = FragmentLoginBinding.inflate(inflater, container, false)
-        loginModel = LoginModel("", "", context!!)
+        loginModel = LoginXModel("", "", requireActivity().application)
         binding.model = loginModel
         binding.activity = activity
+        binding.lifecycleOwner = this
         return binding.root
     }
 
