@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.work.WorkInfo
 import com.jetpack.first.common.Constants.KEY_IMAGE_URI
 import com.jetpack.first.databinding.FragmentMeBinding
+import com.jetpack.first.db.data.User
 import com.jetpack.first.viewmodels.MeModel
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.support.v4.toast
@@ -36,11 +37,11 @@ class MeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        meViewModel =
-            ViewModelProviders.of(this).get(MeModel::class.java)
-
+        meViewModel = ViewModelProviders.of(this)[MeModel::class.java]
+        meViewModel.getUsers().observe(this, Observer<List<User>>{ users ->
+            // update UI
+        })
         meViewModel.outputWorkInfoItems.observe(this, workInfosObserver())
-
         val binding = FragmentMeBinding.inflate(inflater, container, false)
         binding.model = meViewModel
         return binding.root

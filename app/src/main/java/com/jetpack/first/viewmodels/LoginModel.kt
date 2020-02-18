@@ -1,20 +1,20 @@
 package com.jetpack.first.viewmodels
 
-import android.content.Context
-import android.content.Intent
-import android.widget.Toast
 import androidx.databinding.ObservableField
-import com.jetpack.first.ui.activity.MainActivity
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.jetpack.first.common.Constants
+import com.jetpack.first.db.data.User
+import timber.log.Timber
 
-class LoginModel constructor(name: String, pwd: String, context: Context) {
+class LoginModel constructor(name: String, password: String): ViewModel() {
 
     // ObservableField是一个可观察的域
     val nameField = ObservableField<String>(name)
-    val pwdField = ObservableField<String>(pwd)
-    var context: Context = context
+    val passwordField = ObservableField<String>(password)
 
-    /**
+    /**W
      * 用户名改变回调的函数
      */
     fun onNameChanged(s: CharSequence) {
@@ -25,14 +25,16 @@ class LoginModel constructor(name: String, pwd: String, context: Context) {
      * 密码改变的回调函数
      */
     fun onPwdChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-        pwdField.set(s.toString())
+        passwordField.set(s.toString())
     }
 
     fun login() {
-        if (nameField.get().equals(Constants.USER_NAME) && pwdField.get().equals(Constants.USER_PWD)) {
-            Toast.makeText(context, "账号密码正确", Toast.LENGTH_SHORT).show()
-            val intent = Intent(context, MainActivity::class.java)
-            context.startActivity(intent)
+        Timber.i("nameField.get(): ${nameField.get()}")
+        Timber.i("passwordField.get(): ${passwordField.get()}")
+        if (nameField.get().equals(Constants.USER_NAME) && passwordField.get().equals(Constants.USER_PWD)) {
+//            Toast.makeText(context, "账号密码正确", Toast.LENGTH_SHORT).show()
+//            val intent = Intent(context, MainActivity::class.java)
+//            context.startActivity(intent)
         }
     }
 

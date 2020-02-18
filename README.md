@@ -62,3 +62,6 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 
 多学英语看官方文档。
 
+[Kotlin 语言中文站 指南](<http://www.kotlincn.net/docs/reference/>)
+
+[Kotlin+MVVM+LiveData+协程 打造 Wanandroid](<https://github.com/lulululbj/wanandroid>)

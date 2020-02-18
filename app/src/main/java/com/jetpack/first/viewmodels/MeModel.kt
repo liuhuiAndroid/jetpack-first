@@ -4,10 +4,12 @@ import android.app.Application
 import android.net.Uri
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.work.*
 import com.jetpack.first.common.Constants.IMAGE_MANIPULATION_WORK_NAME
 import com.jetpack.first.common.Constants.KEY_IMAGE_URI
 import com.jetpack.first.common.Constants.TAG_OUTPUT
+import com.jetpack.first.db.data.User
 import com.jetpack.first.workers.BlurWorker
 import com.jetpack.first.workers.CleanupWorker
 import com.jetpack.first.workers.SaveImageToFileWorker
@@ -106,5 +108,24 @@ class MeModel(application: Application) : AndroidViewModel(application) {
 
     internal fun setOutputUri(outputImageUri: String?) {
         outputUri = uriOrNull(outputImageUri)
+    }
+
+    // =====================
+    // lazy 只用于常量 val
+    // lazy 应用于单例模式(if-null-then-init-else-return)，而且当且仅当变量被第一次调用的时候，委托方法才会执行。
+    private val users: MutableLiveData<List<User>> by lazy {
+        // also函数适用于let函数的任何场景，also函数和let很像，
+        // 只是唯一的不同点就是let函数最后的返回值是最后一行的返回值而also函数的返回值是返回当前的这个对象。
+        MutableLiveData<List<User>>().also {
+            loadUsers()
+        }
+    }
+
+    fun getUsers(): LiveData<List<User>> {
+        return users
+    }
+
+    private fun loadUsers() {
+        // Do an asynchronous operation to fetch users.
     }
 }

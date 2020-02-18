@@ -5,16 +5,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.jetpack.first.ui.activity.MainActivity
+import androidx.fragment.app.viewModels
 import com.jetpack.first.databinding.FragmentLoginBinding
 import com.jetpack.first.viewmodels.LoginModel
-import com.jetpack.first.viewmodels.LoginXModel
-import kotlinx.android.synthetic.main.fragment_login.*
-import org.jetbrains.anko.support.v4.startActivity
+import com.jetpack.first.viewmodels.factory.LoginModelFactory
 
 class LoginFragment : Fragment() {
 
-    private lateinit var loginModel: LoginXModel
+    // Obtain ViewModel
+    private val loginModel: LoginModel by viewModels { LoginModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,20 +27,10 @@ class LoginFragment : Fragment() {
 //            false
 //        )
         val binding = FragmentLoginBinding.inflate(inflater, container, false)
-        loginModel = LoginXModel("", "", requireActivity().application)
-        binding.model = loginModel
-        binding.activity = activity
         binding.lifecycleOwner = this
+        binding.viewmodel = loginModel
+        binding.activity = activity
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        btn_login.setOnClickListener {
-            startActivity<MainActivity>()
-        }
-
     }
 
 }
