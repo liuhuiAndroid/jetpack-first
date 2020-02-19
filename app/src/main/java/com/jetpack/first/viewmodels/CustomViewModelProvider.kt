@@ -15,8 +15,8 @@ object CustomViewModelProvider {
         return ShoeModelFactory(repository)
     }
 
-
 //    fun providerMeModel(context: Context): MeModelFactory {
 //        return MeModelFactory(AppContext)
 //    }
+
 }

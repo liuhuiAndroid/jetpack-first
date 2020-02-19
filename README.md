@@ -56,6 +56,8 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 
 [Kotlin系列之let、with、run、apply、also函数的使用](<https://blog.csdn.net/u013064109/article/details/78786646>)
 
+[聊聊kotlin中的run,let,with,apply,also...](<https://www.tinymind.net.cn/articles/2e615f1df6b237>)
+
 [Android 进阶：基于 Kotlin 的 Android App 开发实践](https://juejin.im/book/5af1c5ee6fb9a07a9f018368/section)
 
 [将 Kotlin 协程与 Android 架构组件一起使用](https://developer.android.com/topic/libraries/architecture/coroutines)

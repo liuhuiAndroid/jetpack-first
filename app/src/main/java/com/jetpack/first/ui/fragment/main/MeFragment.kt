@@ -10,13 +10,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.work.WorkInfo
+import com.jetpack.first.JApplication
 import com.jetpack.first.common.Constants.KEY_IMAGE_URI
 import com.jetpack.first.databinding.FragmentMeBinding
 import com.jetpack.first.db.data.User
 import com.jetpack.first.viewmodels.MeModel
+import com.jetpack.first.viewmodels.factory.MeModelFactory
 import kotlinx.android.synthetic.main.fragment_me.*
 import org.jetbrains.anko.support.v4.toast
 import pub.devrel.easypermissions.AfterPermissionGranted
@@ -27,7 +30,7 @@ import timber.log.Timber
 class MeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
 
     private var RC_CAMERA_PERM: Int = 122
-    private lateinit var meViewModel: MeModel
+    private val meViewModel: MeModel by viewModels { MeModelFactory(JApplication.INSTANCE) }
 
     private val REQUEST_CODE_IMAGE = 100
     private val REQUEST_CODE_PERMISSIONS = 101
@@ -37,13 +40,13 @@ class MeFragment : Fragment(), EasyPermissions.PermissionCallbacks {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        meViewModel = ViewModelProviders.of(this)[MeModel::class.java]
-        meViewModel.getUsers().observe(this, Observer<List<User>>{ users ->
+        meViewModel.getUsers().observe(this, Observer<List<User>> { users ->
             // update UI
         })
         meViewModel.outputWorkInfoItems.observe(this, workInfosObserver())
         val binding = FragmentMeBinding.inflate(inflater, container, false)
         binding.model = meViewModel
+        binding.lifecycleOwner = this
         return binding.root
     }
 

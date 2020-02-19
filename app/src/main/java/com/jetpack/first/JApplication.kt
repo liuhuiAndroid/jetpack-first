@@ -5,9 +5,6 @@ import android.content.ContextWrapper
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
-
-private lateinit var INSTANCE: Application
-
 open class JApplication : Application(){
 
     override fun onCreate() {
@@ -19,6 +16,10 @@ open class JApplication : Application(){
         }
     }
 
+    companion object {
+        lateinit var INSTANCE: Application
+    }
+
 }
 
 /**
@@ -26,4 +27,4 @@ open class JApplication : Application(){
  *
  * @return 全局Context对象。
  */
-object AppContext : ContextWrapper(INSTANCE)
+object AppContext : ContextWrapper(JApplication.INSTANCE)
