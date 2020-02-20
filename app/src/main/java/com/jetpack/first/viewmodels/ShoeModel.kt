@@ -25,8 +25,11 @@ class ShoeModel constructor(shoeRepository: ShoeRepository) : ViewModel() {
 //            shoeRepository.getShoesByBrand(it)
 //        }
 //    }
+
+    private val dataSourceFactory = CustomPageDataSourceFactory(shoeRepository)
+
     val shoes: LiveData<PagedList<Shoe>> = LivePagedListBuilder<Int, Shoe>(
-        CustomPageDataSourceFactory(shoeRepository),  // DataSourceFactory
+        dataSourceFactory,  // DataSourceFactory
         PagedList.Config.Builder()
             .setPageSize(4) // 分页加载的数量
             .setEnablePlaceholders(false) // 当item为null是否使用PlaceHolder展示

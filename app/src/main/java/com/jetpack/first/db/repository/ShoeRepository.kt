@@ -8,7 +8,8 @@ class ShoeRepository private constructor(private val shoeDao: ShoeDao) {
     /**
      * 通过id的范围寻找鞋子
      */
-    fun getPageShoes(startIndex:Long,endIndex:Long):List<Shoe> = shoeDao.findShoesByIndexRange(startIndex,endIndex)
+    fun getPageShoes(startIndex: Long, endIndex: Long): List<Shoe> =
+        shoeDao.findShoesByIndexRange(startIndex, endIndex)
 
     fun getAllShoes() = shoeDao.getAllShoes()
 
@@ -17,7 +18,7 @@ class ShoeRepository private constructor(private val shoeDao: ShoeDao) {
     /**
      * 通过品牌查询鞋子
      */
-    fun getShoesByBrand(brand:String) = shoeDao.findShoeByBrand(brand)
+    fun getShoesByBrand(brand: String) = shoeDao.findShoeByBrand(brand)
 
     /**
      * 插入鞋子的集合

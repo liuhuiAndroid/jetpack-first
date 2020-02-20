@@ -13,7 +13,7 @@ interface ShoeDao {
 
     // 通过鞋子的范围寻找Index
     @Query("SELECT * FROM shoe WHERE id between :startIndex AND :endIndex ORDER BY id ASC")
-    fun findShoesByIndexRange(startIndex: Long, endIndex: Long):List<Shoe>
+    fun findShoesByIndexRange(startIndex: Long, endIndex: Long) : List<Shoe>
 
     // 选择所有的鞋
     @Query("SELECT * FROM shoe")

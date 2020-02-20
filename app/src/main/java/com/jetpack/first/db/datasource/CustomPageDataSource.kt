@@ -6,6 +6,9 @@ import com.jetpack.first.db.data.Shoe
 import com.jetpack.first.db.repository.ShoeRepository
 import timber.log.Timber
 
+/**
+ * 构建您自己的数据源
+ */
 class CustomPageDataSource(private val shoeRepository: ShoeRepository) : PageKeyedDataSource<Int, Shoe>() {
 
     // 第一次加载的时候调用

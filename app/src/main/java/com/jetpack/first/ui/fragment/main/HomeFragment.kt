@@ -24,9 +24,9 @@ class HomeFragment : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         val binding = DataBindingUtil.inflate<FragmentHomeBinding>(
             inflater,
@@ -35,27 +35,15 @@ class HomeFragment : Fragment() {
             false
         )
         context ?: return binding.root
-        val adapter = ShoeAdapter(context!!)
+        val adapter = ShoeAdapter()
         binding.recyclerView.adapter = adapter
-        onSubscribeUi(adapter)
-        return binding.root
-    }
-
-    /**
-     * 鞋子数据更新的通知
-     */
-    private fun onSubscribeUi(adapter: ShoeAdapter) {
+        // 鞋子数据更新的通知
         viewModel.shoes.observe(viewLifecycleOwner, Observer {
-            if (it != null) {
+            it?.let {
                 adapter.submitList(it)
             }
         })
-
-        Thread{
-            val shoeDao = RepositoryProvider.providerShoeRepository(AppContext)
-            val allShoes = shoeDao.findAllShoe()
-            Log.e("AAA",  "allShoes.size = " + allShoes.size)
-        }.start()
+        return binding.root
     }
 
 }

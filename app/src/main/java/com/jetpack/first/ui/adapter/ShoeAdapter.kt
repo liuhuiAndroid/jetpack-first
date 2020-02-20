@@ -1,7 +1,5 @@
 package com.jetpack.first.ui.adapter
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.jetpack.first.databinding.ItemShoeBinding
 import com.jetpack.first.db.data.Shoe
 
-class ShoeAdapter constructor(val context: Context) :
-    PagedListAdapter<Shoe, ShoeAdapter.ViewHolder>(ShoeDiffCallback()) {
+class ShoeAdapter : PagedListAdapter<Shoe, ShoeAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -51,16 +48,14 @@ class ShoeAdapter constructor(val context: Context) :
             }
         }
     }
-}
 
-private class ShoeDiffCallback : DiffUtil.ItemCallback<Shoe>() {
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Shoe>() {
 
-    override fun areItemsTheSame(oldItem: Shoe, newItem: Shoe): Boolean {
-        return oldItem.id == newItem.id
+            override fun areItemsTheSame(oldItem: Shoe, newItem: Shoe) = oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Shoe, newItem: Shoe) = oldItem == newItem
+
+        }
     }
-
-    override fun areContentsTheSame(oldItem: Shoe, newItem: Shoe): Boolean {
-        return oldItem == newItem
-    }
-
 }

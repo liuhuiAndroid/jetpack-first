@@ -34,11 +34,7 @@ Jetpack 介绍：为了帮助开发者更高效、更容易地构建优秀的应
 
 [《即学即用Android Jetpack - Room》](https://www.jianshu.com/p/815c7db24b6d)
 
-#### Paging
-
-[视频 Android Jetpack: 分页库 (Paging Library)](<https://www.bilibili.com/video/av35089294>)
-
-[《即学即用Android Jetpack - Paging》](https://www.jianshu.com/p/0b7c82a5c27f)
+#### [Paging](./doc/4.Paging.md)
 
 #### WorkManager - 满足您的后台调度需求
 
