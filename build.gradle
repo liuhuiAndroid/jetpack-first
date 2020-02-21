@@ -13,6 +13,8 @@ buildscript {
     ext.timber_version = "4.7.1"
     ext.permissions_version = "3.0.0"
     ext.paging_version = "2.1.0"
+    ext.retrofit_version = "2.3.0"
+    ext.okhttp_version = "3.9.0"
 
     repositories {
         google()
